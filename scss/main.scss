@@ -1,8 +1,22 @@
 @import './materialize';
 
-// Header
+// Vars
 $header-bg: url(../img/pattern.png);
 $header-height: 300px;
+
+// Text Color Function
+@function set-text-color($color) {
+  @if (lightness($color) > 50) {
+    @return #000000;
+  } @else {
+    @return #ffffff;
+  }
+}
+
+body {
+  background: $primary-color;
+  color: set-text-color($primary-color);
+}
 
 .main-header {
   background: $header-bg;
@@ -14,4 +28,15 @@ $header-height: 300px;
     margin: 0;
     padding-top: 30px;
   }
+}
+
+.img-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 300px;
+}
+
+.card-content {
+  color: $primary-color;
 }
