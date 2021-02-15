@@ -100,7 +100,7 @@
                 <i class="material-icons">star</i>
                 <i class="material-icons">star</i>
                 <i class="material-icons">star</i>
-                <i class="material-icons">star</i>
+                <i class="material-icons">star_half</i>
               </p>
             </div>
           </div>
@@ -171,12 +171,91 @@
     </div>
   </footer>
 
+  <!-- Modal 1 -->
+  <div id="abstract1" class="modal">
+    <div class="modal-content">
+      <h4>Diligord</h4>
+      <img src="img/gallery/abstract1.jpg" alt="" class="responsive-img">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus deleniti nemo nihil eos. Perspiciatis ex cupiditate perferendis ducimus, nihil culpa?
+    </div>
+    <div class="modal-footer">
+      <p>
+        <i class="material-icons">star</i>
+        <i class="material-icons">star</i>
+        <i class="material-icons">star</i>
+        <i class="material-icons">star</i>
+        <i class="material-icons">star</i>
+      </p>
+    </div>
+  </div>
+
+  <!-- Modal 2 -->
+  <div id="abstract2" class="modal">
+    <div class="modal-content">
+      <h4>Aleressa</h4>
+      <img src="img/gallery/abstract2.jpg" alt="" class="responsive-img">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus deleniti nemo nihil eos. Perspiciatis ex cupiditate perferendis ducimus, nihil culpa?
+    </div>
+    <div class="modal-footer">
+      <p>
+        <i class="material-icons">star</i>
+        <i class="material-icons">star</i>
+        <i class="material-icons">star</i>
+        <i class="material-icons">star</i>
+        <i class="material-icons">star_half</i>
+      </p>
+    </div>
+  </div>
+
+  <!-- Modal 3 -->
+  <div id="abstract3" class="modal">
+    <div class="modal-content">
+      <h4>Recogged</h4>
+      <img src="img/gallery/abstract3.jpg" alt="" class="responsive-img">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus deleniti nemo nihil eos. Perspiciatis ex cupiditate perferendis ducimus, nihil culpa?
+    </div>
+    <div class="modal-footer">
+      <p>
+        <i class="material-icons">star</i>
+        <i class="material-icons">star</i>
+        <i class="material-icons">star</i>
+        <i class="material-icons">star</i>
+        <i class="material-icons">star</i>
+      </p>
+    </div>
+  </div>
+
   <!--Import jQuery before materialize.js-->
   <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
   <script type="text/javascript" src="js/materialize.min.js"></script>
   <script>
     $(document).ready(function () {
+      // Init Sidenav
       $('.button-collapse').sideNav();
+
+      // Init Modal
+      $('.modal').modal();
+
+      // Scrollfire
+      const options = [
+        {
+          selector: '.row-1', offset: 50, callback: function(el) {
+            Materialize.fadeInImage($(el));
+          }
+        },
+        {
+          selector: '.row-2', offset: 300, callback: function(el) {
+            Materialize.fadeInImage($(el));
+          }
+        },
+        {
+          selector: '.row-3', offset: 400, callback: function(el) {
+            Materialize.fadeInImage($(el));
+          }
+        }
+      ];
+
+      Materialize.scrollFire(options);
 
     });
   </script>
